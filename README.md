@@ -1,8 +1,6 @@
 # 特效页面集合
 
-## [Canvas3D球形文字标签云动画.html](http://bonze.gitee.io/special_effects/Canvas3D球形文字标签云动画.html)
-
-## [README.md](http://bonze.gitee.io/special_effects/README.md)
+## [球形文字标签云动画 Canvas3D](http://bonze.gitee.io/special_effects/球形文字标签云动画Canvas3D.html)
 
 ## [上漂动画.html](http://bonze.gitee.io/special_effects/上漂动画.html)
 
