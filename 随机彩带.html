@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,7 +42,11 @@
         x.lineTo(k, n);
         x.closePath();
         r -= u / -50;
-        x.fillStyle = '#' + (((v(r) * 127 + 128) << 16) | ((v(r + u / 3) * 127 + 128) << 8) | (v(r + (u / 3) * 2) * 127 + 128)).toString(16);
+        x.fillStyle =
+          '#' +
+          (((v(r) * 127 + 128) << 16) | ((v(r + u / 3) * 127 + 128) << 8) | (v(r + (u / 3) * 2) * 127 + 128)).toString(
+            16
+          );
         x.fill();
         q[0] = q[1];
         q[1] = { x: k, y: n };
