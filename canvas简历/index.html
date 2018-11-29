@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Canvas简历</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #f4f4f4;
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="resume"></canvas>
+  </body>
+  <script>
+    var timer = null;
+    var resume = document.getElementById('resume');
+    var ctx = resume.getContext('2d');
+    var i = 150;
+
+    function init() {
+      console.log('执行');
+      ctx.fillStyle = 'red';
+      ctx.fillRect(10, 10, 50, 50);
+    }
+
+    window.addEventListener('load', windowLoadHandler, false);
+    function windowLoadHandler() {
+      resume.width = document.body.clientWidth;
+      init();
+    }
+    window.addEventListener('resize', function() {
+      var imgData = ctx.getImageData(0, 0, resume.width, resume.height);
+      console.log(imgData);
+
+      resume.width = document.body.clientWidth;
+      ctx.putImageData(imgData, i++, 50);
+    });
+    //生成从minNum到maxNum的随机数
+    function randomNum(minNum, maxNum) {
+      switch (arguments.length) {
+        case 1:
+          return parseInt(Math.random() * minNum + 1, 10);
+          break;
+        case 2:
+          return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+          break;
+        default:
+          return 0;
+          break;
+      }
+    }
+  </script>
+</html>
