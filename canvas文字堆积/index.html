@@ -135,7 +135,7 @@
           randAccelZ = 0.1;
 
           // 0 粒子四周发散， <0 则向上飘散 ， >0 则向下飘散
-          gravity = -0;
+          gravity = -0.2;
 
           particleRad = 2.5;
 
@@ -149,7 +149,7 @@
           turnSpeed = (2 * Math.PI) / 300; //球体将以这个速度旋转
           turnAngle = 0; //initial angle
 
-          onTimer(); 
+          onTimer();
         }
 
         function onTimer() {
@@ -250,8 +250,9 @@
             } else {
               //depth-dependent darkening
               depthAlphaFactor = 1 - rotZ / zeroAlphaDepth;
-              depthAlphaFactor = depthAlphaFactor > 1 ? 1 : depthAlphaFactor < 0 ? 0 : depthAlphaFactor;
 
+              depthAlphaFactor = depthAlphaFactor > 1 ? 1 : depthAlphaFactor < 0 ? 0 : depthAlphaFactor;
+ 
               context.fillStyle = p.color + depthAlphaFactor * p.alpha + ')';
               /*ADD TEXT function!*/
               /*ADD TEXT function!*/
