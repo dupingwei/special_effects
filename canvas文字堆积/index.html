@@ -121,7 +121,7 @@
           fLen = 500;
           // 投影中心坐标集原点定位
           projCenterX = displayWidth / 2;
-          projCenterY = displayHeight / 2;
+          projCenterY = displayHeight / 2; 
 
           //如果z坐标太大（这意味着它们非常接近观察者），我们就不会绘制坐标。
           zMax = fLen - 2;
@@ -163,6 +163,8 @@
               x0 = sphereRad * Math.sin(phi) * Math.cos(theta);
               y0 = sphereRad * Math.sin(phi) * Math.sin(theta);
               z0 = sphereRad * Math.cos(phi);
+              console.log(x0,y0,z0);
+              
 
               //我们使用AdQuoStand函数来添加新粒子。参数设置了位置和速度分量。 注意，速度参数将导致粒子最初从球形中心向外飞行(之后)。它变得松散了。
               var p = addParticle(x0, sphereCenterY + y0, sphereCenterZ + z0, 0.002 * x0, 0.002 * y0, 0.002 * z0);
@@ -195,6 +197,7 @@
 
           //update and draw particles
           p = particleList.first;
+
           while (p != null) {
             //在列表改变之前记录下一个粒子
             nextParticle = p.next;
@@ -251,9 +254,11 @@
               //depth-dependent darkening
               depthAlphaFactor = 1 - rotZ / zeroAlphaDepth;
 
+              // 改变透明度
               depthAlphaFactor = depthAlphaFactor > 1 ? 1 : depthAlphaFactor < 0 ? 0 : depthAlphaFactor;
- 
+
               context.fillStyle = p.color + depthAlphaFactor * p.alpha + ')';
+              // context.fillStyle = p.color + 1 + ')';
               /*ADD TEXT function!*/
               /*ADD TEXT function!*/
               /*ADD TEXT function!*/
@@ -276,7 +281,7 @@
 
             p = nextParticle;
           }
-          requestAnimationFrame(onTimer);
+          // requestAnimationFrame(onTimer);
         }
 
         function addParticle(x0, y0, z0, vx0, vy0, vz0) {
@@ -321,6 +326,7 @@
           newParticle.age = 0;
           newParticle.dead = false;
 
+          // 获取随机数字
           newParticle.flake = unicodeFlakes[Math.floor(Math.random() * unicodeFlakes.length)];
           if (Math.random() < 0.5) {
             newParticle.right = true;
