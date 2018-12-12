@@ -3,7 +3,7 @@ html2canvas(document.querySelector('#capture')).then((canvas) => {
   // a.style.cssText += 'position: absolute;left: -100%;';
 });
 
-window.onload = function() {
+window.onload = function () {
   let canvas = document.querySelector('#canvas');
   let ctx = canvas.getContext('2d');
 
@@ -16,7 +16,7 @@ window.onload = function() {
   // y轴运动方式
   let Yrule = document.querySelector('#Yzhou').value;
   // 动画运行时间
-  let Ts =  document.querySelector('#Time_dul').value * 80;
+  let Ts = document.querySelector('#Time_dul').value * 80;
   canvas.width = Wi + 200;
   canvas.height = Hi + 200;
 
@@ -25,7 +25,7 @@ window.onload = function() {
   let points = [];
 
   // 注册点击事件
-  document.querySelector('#canvas').addEventListener('click', function(e) {
+  document.querySelector('#canvas').addEventListener('click', function (e) {
     Xrule = document.querySelector('#Xzhou').value;
     Yrule = document.querySelector('#Yzhou').value;
     Ts = document.querySelector('#Time_dul').value * 80;
@@ -67,6 +67,7 @@ window.onload = function() {
 
     draw_img();
   }
+
   function draw_img() {
     rid = window.requestAnimationFrame(draw_img);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -93,11 +94,13 @@ window.onload = function() {
       this.beginT = -parseInt(Math.random() * Ts);
       this.rgba = 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
     }
+
     draw() {
       ctx.fillStyle = this.rgba;
       ctx.beginPath();
       ctx.fillRect(this.xd, this.yd, 1, 1);
     }
+
     cul() {
       if (this.beginT <= 0) {
         this.beginT++;
