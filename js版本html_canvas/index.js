@@ -12,20 +12,11 @@ window.onload = function() {
 
   let count_xsd;
   // x轴运动方式
-  let Xrule = $('#Xzhou').val();
+  let Xrule = document.querySelector('#Xzhou').value;
   // y轴运动方式
-  let Yrule = $('#Yzhou').val();
-  $('#Xzhou').change(function() {
-    Xrule = $('#Xzhou').val();
-  });
-  $('#Yzhou').change(function() {
-    Yrule = $('#Yzhou').val();
-  });
+  let Yrule = document.querySelector('#Yzhou').value;
   // 动画运行时间
-  let Ts = $('#Time_dul').val() * 80;
-  $('#Time_dul').change(function() {
-    Ts = $('#Time_dul').val() * 80;
-  });
+  let Ts =  document.querySelector('#Time_dul').value * 80;
   canvas.width = Wi + 200;
   canvas.height = Hi + 200;
 
@@ -35,6 +26,9 @@ window.onload = function() {
 
   // 注册点击事件
   document.querySelector('#canvas').addEventListener('click', function(e) {
+    Xrule = document.querySelector('#Xzhou').value;
+    Yrule = document.querySelector('#Yzhou').value;
+    Ts = document.querySelector('#Time_dul').value * 80;
     points = [];
     let [xo, yo] = [e.clientX, e.clientY];
     init(xo, yo);
