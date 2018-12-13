@@ -110,8 +110,7 @@ window.onload = function () {
         if (!this.over) {
           count_xsd--;
           this.over = true;
-          if (count_xsd <= 0) {
-            window.cancelAnimationFrame(rid);
+          if (count_xsd <= 0) {apply
             console.log('此处完成一波动画');
           }
         }
