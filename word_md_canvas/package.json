@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "html2canvas": "^1.0.0-alpha.12",
-    "marked": "^0.5.2",
+    "marked": "^0.6.1",
     "vue": "^2.5.17"
   },
   "devDependencies": {
